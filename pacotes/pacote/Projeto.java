@@ -1,5 +1,6 @@
 package pacotes.pacote;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 /**
@@ -20,13 +21,13 @@ public class Projeto {
     Date dataHrTermino;
     Date vigenciaBolsa;
     
-    public Projeto(String identificacao, String descricao, String coordenador, int valorBolsa, Date dataHrInicio,
-            Date dataHrTermino, Date vigenciaBolsa) {
+    public Projeto(String identificacao, String descricao, String coordenador, int valorBolsa, Date dataHrTermino, Date vigenciaBolsa) {
+
         this.identificacao = identificacao;
         this.descricao = descricao;
         this.coordenador = coordenador;
         this.valorBolsa = valorBolsa;
-        this.dataHrInicio = dataHrInicio;
+        this.dataHrInicio = new Date();
         this.dataHrTermino = dataHrTermino;
         this.vigenciaBolsa = vigenciaBolsa;
     }
