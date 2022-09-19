@@ -17,7 +17,7 @@ public class Atividade {
 
     Usuario responsavel;
 
-    ArrayList<String> profissionais;
+    ArrayList<Profissional> profissionais;
     ArrayList<String> tarefas;
     
     public Atividade(String identificacao, String descricao, Date dataHrInicio, Date dataHrTermino, Usuario responsavel) {
@@ -47,7 +47,7 @@ public class Atividade {
         this.dataHrTermino = dataHrTermino;
         this.responsavel = responsavel;
     }
-    public void setProfissionais(String profissionais) {
+    public void setProfissionais(Profissional profissionais) {
         this.profissionais.add(profissionais);
     }
     public void setTarefas(String tarefas) {
@@ -79,7 +79,7 @@ public class Atividade {
     }
     private String profissionaisStr() {
         StringBuilder stringBuilder = new StringBuilder("");
-        for (String profissional : this.profissionais) {
+        for (Profissional profissional : this.profissionais) {
             stringBuilder.append(profissional).append(" ");
         }
         return stringBuilder.toString();
