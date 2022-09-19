@@ -11,8 +11,8 @@ public class Projeto {
     String descricao;
     String coordenador;
 
-    ArrayList<String> profissionais;
-    ArrayList<String> atividades;
+    ArrayList<Profissional> profissionais;
+    ArrayList<Atividade> atividades;
 
     int valorBolsa;
 
@@ -39,11 +39,11 @@ public class Projeto {
     public void setCoordenador(String coordenador) {
         this.coordenador = coordenador;
     }
-    public void setProfissionais(String profissionais) {
-        this.profissionais.add(profissionais);
+    public void setProfissionais(Profissional profissional) {
+        this.profissionais.add(profissional);
     }
-    public void setAtividades(String atividades) {
-        this.atividades.add(atividades);
+    public void setAtividades(Atividade atividade) {
+        this.atividades.add(atividade);
     }
     public void setValorBolsa(int valorBolsa) {
         this.valorBolsa = valorBolsa;
@@ -59,17 +59,41 @@ public class Projeto {
     }
     private String profissionaisStr() {
         StringBuilder stringBuilder = new StringBuilder("");
-        for (String profissional : this.profissionais) {
+        for (Profissional profissional : this.profissionais) {
             stringBuilder.append(profissional).append(" ");
         }
         return stringBuilder.toString();
     }
     private String atividadesStr() {
         StringBuilder stringBuilder = new StringBuilder("");
-        for (String atividade : this.atividades) {
+        for (Atividade atividade : this.atividades) {
             stringBuilder.append(atividade).append(" ");
         }
         return stringBuilder.toString();
+    }
+    private void removeAtividade(Atividade atividade) {
+        if(this.atividades.contains(atividade)) {
+            int index = this.atividades.indexOf(atividade);
+            try {
+                this.atividades.remove(index);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+            return;
+        }
+        System.out.println("Not found");
+    }
+    private void removeProfissional(Profissional profissional) {
+        if(this.profissionais.contains(profissional)) {
+            int index = this.profissionais.indexOf(profissional);
+            try {
+                this.profissionais.remove(index);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+            return;
+        }
+        System.out.println("Not found");
     }
     @Override
     public String toString() {

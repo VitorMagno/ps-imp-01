@@ -52,7 +52,31 @@ public class Atividade {
     }
     public void setTarefas(String tarefas) {
         this.tarefas.add(tarefas);
-    };
+    }
+    private void removeProfissional(String profissional) {
+        if(this.profissionais.contains(profissional)) {
+            int index = this.profissionais.indexOf(profissional);
+            try {
+                this.profissionais.remove(index);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+            return;
+        }
+        System.out.println("Not found");
+    }
+    private void removeTarefa(String tarefa) {
+        if(this.tarefas.contains(tarefa)) {
+            int index = this.tarefas.indexOf(tarefa);
+            try {
+                this.tarefas.remove(index);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+            return;
+        }
+        System.out.println("Not found");
+    }
     private String profissionaisStr() {
         StringBuilder stringBuilder = new StringBuilder("");
         for (String profissional : this.profissionais) {
