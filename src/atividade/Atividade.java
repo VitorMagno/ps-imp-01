@@ -1,4 +1,4 @@
-package pacotes.pacote;
+package src.atividade;
 /**
  * Atividade
  */
@@ -6,7 +6,11 @@ package pacotes.pacote;
 import java.util.ArrayList;
 import java.util.Date;
 
+import src.usuario.Profissional;
+import src.usuario.Usuario;
+
 public class Atividade {
+    int id;
     String identificacao;
     String descricao;
     String profissionaisString;
@@ -20,7 +24,7 @@ public class Atividade {
     ArrayList<Profissional> profissionais;
     ArrayList<String> tarefas;
     
-    public Atividade(String identificacao, String descricao, Date dataHrInicio, Date dataHrTermino, Usuario responsavel) {
+    public Atividade(int id, String identificacao, String descricao, Date dataHrInicio, Date dataHrTermino, Usuario responsavel) {
         if (identificacao == null || identificacao == ""){
             System.out.println("missing value identificacao");
             return;
@@ -41,6 +45,7 @@ public class Atividade {
             System.out.println("missing value responsavel");
             return;
         }
+        this.id = id;
         this.identificacao = identificacao;
         this.descricao = descricao;
         this.dataHrInicio = dataHrInicio;
@@ -93,10 +98,13 @@ public class Atividade {
     }
     @Override
     public String toString() {
-        return "Atividade [dataHrInicio=" + dataHrInicio + ", \ndataHrTermino=" + dataHrTermino + ", \ndescricao="
-                + descricao + ", \nidentificacao=" + identificacao + ", \nprofissionaisString=" + profissionaisString
-                + ", \nresponsavel=" + responsavel + ", \ntarefasString=" + tarefasString + ", \nprofissionais="
-                +profissionaisStr()+", \ntarefas="+tarefasStr()+"]";
+        return "Atividade [id = "+ id +
+                        ", \nidentificacao = " + identificacao +
+                        ", dataHrInicio = " + dataHrInicio + ", \ndataHrTermino=" + dataHrTermino + 
+                        ", \ndescricao = " + descricao + 
+                        ", \nresponsavel = " + responsavel + 
+                        ", \nprofissionais = "+profissionaisStr()+
+                        ", \ntarefas = "+tarefasStr()+"]";
     }
     
 }

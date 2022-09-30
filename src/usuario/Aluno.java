@@ -1,4 +1,4 @@
-package pacotes.pacote;
+package src.usuario;
 
 public class Aluno extends Usuario{
 
@@ -6,10 +6,9 @@ public class Aluno extends Usuario{
         //     GRADUACAO, MESTRADO, DOUTORADO
         // };
     private String tipoGraduacao;
-    public Aluno(String nome, String tipoGraduacao) {
-        super(nome);
+    public Aluno(String nome, int cpf, String tipoGraduacao) {
+        super(nome, cpf);
         this.tipoGraduacao = tipoGraduacao;
-        //TODO Auto-generated constructor stub
     }
 }
     

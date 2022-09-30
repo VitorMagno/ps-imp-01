@@ -1,4 +1,12 @@
+package src.app;
 import pacotes.pacote.*;
+import src.atividade.Atividade;
+import src.projeto.Projeto;
+import src.usuario.Aluno;
+import src.usuario.Professor;
+import src.usuario.Profissional;
+import src.usuario.Tecnico;
+import src.usuario.Usuario;
 
 import java.util.ArrayList;
 import java.util.Date;
