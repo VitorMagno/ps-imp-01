@@ -1,7 +1,7 @@
 package src.gerenciamento;
 
 import src.usuario.Usuario;
-import src.gerenciamento.GerenciadorUsuarios;
+
 public class GerenciadorLogin {
     GerenciadorUsuarios appUsers;
     public void login(Usuario user, String password) {
