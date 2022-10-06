@@ -53,6 +53,20 @@ public class Atividade {
         this.responsavel = responsavel;
     }
     //----------setters & getters--------//
+    
+    public void setIdentificacao(String identificacao) {
+        this.identificacao = identificacao;
+    }
+    public String getIdentificacao() {
+        return this.identificacao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+    public String getDescricao() {
+        return this.descricao;
+    }
 
     public void setProfissionais(Profissional profissionais) {
         this.profissionais.add(profissionais);
