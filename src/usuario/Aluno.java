@@ -6,8 +6,8 @@ public class Aluno extends Usuario{
         //     GRADUACAO, MESTRADO, DOUTORADO
         // };
     private String tipoGraduacao;
-    public Aluno(String nome, String tipoGraduacao, int cpf) {
-        super(nome, cpf);
+    public Aluno(String nome, String tipoGraduacao, int cpf, String senha) {
+        super(nome, cpf, senha);
         this.tipoGraduacao = tipoGraduacao;
     }
     @Override
