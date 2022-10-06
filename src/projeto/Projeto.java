@@ -1,6 +1,5 @@
 package src.projeto;
 
-import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -27,6 +26,34 @@ public class Projeto {
     Date vigenciaBolsa;
     
     public Projeto(int id, String identificacao, String descricao, Professor coordenador, int valorBolsa, Date dataHrInicio, Date dataHrTermino, Date vigenciaBolsa) {
+        if (identificacao == null || identificacao == ""){
+            System.out.println("missing value identificacao");
+            return;
+        }
+        if (descricao == null || descricao == ""){
+            System.out.println("missing value descricao");
+            return;
+        }
+        if (coordenador == null ){
+            System.out.println("missing value coordenador");
+            return;
+        }
+        if (((Object)valorBolsa).getClass().getSimpleName() != "Integer"){
+            System.out.println("value valorBolsa is not Integer");
+            return;
+        }
+        if (dataHrInicio == null) {
+            System.out.println("missing value dataHrInicio");
+            return;
+        }
+        if (dataHrTermino == null) {
+            System.out.println("missing value dataHrTermino");
+            return;
+        }
+        if (vigenciaBolsa == null) {
+            System.out.println("missing value vigenciaBolsa");
+            return;
+        }
         this.id = id;
         this.identificacao = identificacao;
         this.descricao = descricao;
@@ -36,6 +63,8 @@ public class Projeto {
         this.dataHrTermino = dataHrTermino;
         this.vigenciaBolsa = vigenciaBolsa;
     }
+    //----------setters & getters--------//
+    
     public void setIdentificacao(String identificacao) {
         this.identificacao = identificacao;
     }
@@ -101,6 +130,7 @@ public class Projeto {
 
     //----------metodos----------//
     //----------private----------//
+    
     private String profissionaisStr() {
         StringBuilder stringBuilder = new StringBuilder("");
         for (Profissional profissional : this.profissionais) {
@@ -118,6 +148,7 @@ public class Projeto {
     }
 
     //-----------public-----------//
+    
     public void removeAtividade(Atividade atividade) {
         if(this.atividades.contains(atividade)) {
             int index = this.atividades.indexOf(atividade);
@@ -126,6 +157,7 @@ public class Projeto {
             } catch (Exception e) {
                 System.out.println(e);
             }
+            System.out.println("Removed");
             return;
         }
         System.out.println("Not found");
@@ -139,6 +171,7 @@ public class Projeto {
             } catch (Exception e) {
                 System.out.println(e);
             }
+            System.out.println("Removed");
             return;
         }
         System.out.println("Not found");
@@ -146,7 +179,7 @@ public class Projeto {
 
     @Override
     public String toString() {
-        return "Projeto [coordenador=" + coordenador + ", \ndataHrInicio=" + dataHrInicio + ", \ndataHrTermino="
+        return "Projeto [id=" + id + ", \ncoordenador=" + coordenador + ", \ndataHrInicio=" + dataHrInicio + ", \ndataHrTermino="
                 + dataHrTermino + ", \ndescricao=" + descricao + ", \nidentificacao=" + identificacao + ", \nvalorBolsa="
                 + valorBolsa + ", \nvigenciaBolsa=" + vigenciaBolsa + ", \nprofissionais=" + profissionaisStr()
                 + ", \natividades" + atividadesStr()+ "]";

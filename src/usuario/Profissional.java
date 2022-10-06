@@ -9,5 +9,9 @@ public class Profissional extends Usuario {
         super(nome, cpf);
         this.cargo = cargo;
     }
+    @Override
+    public String toString() {
+        return "Profissional [nome=" + nome + ", cpf=" + cpf + ", cargo="+ cargo +"]";
+    }
     
 }

@@ -4,10 +4,16 @@ package src.usuario;
  */
 public class Usuario {
     //implementar enum cargo 
-    private String nome;
-    private int cpf;
+    protected String nome;
+    protected int cpf;
     public Usuario(String nome, int cpf) {
         this.nome = nome;
         this.cpf = cpf;
     }
+    @Override
+    public String toString() {
+        return "Usuario [nome=" + nome + ", cpf=" + cpf + "]";
+    }
+
+    
 }

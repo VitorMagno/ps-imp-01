@@ -52,36 +52,24 @@ public class Atividade {
         this.dataHrTermino = dataHrTermino;
         this.responsavel = responsavel;
     }
+    //----------setters & getters--------//
+
     public void setProfissionais(Profissional profissionais) {
         this.profissionais.add(profissionais);
     }
+    public String getProfissionais() {
+        return this.profissionaisStr();
+    }
+
     public void setTarefas(String tarefas) {
         this.tarefas.add(tarefas);
     }
-    private void removeProfissional(String profissional) {
-        if(this.profissionais.contains(profissional)) {
-            int index = this.profissionais.indexOf(profissional);
-            try {
-                this.profissionais.remove(index);
-            } catch (Exception e) {
-                System.out.println(e);
-            }
-            return;
-        }
-        System.out.println("Not found");
+    public String getTarefas() {
+        return this.tarefasStr();
     }
-    private void removeTarefa(String tarefa) {
-        if(this.tarefas.contains(tarefa)) {
-            int index = this.tarefas.indexOf(tarefa);
-            try {
-                this.tarefas.remove(index);
-            } catch (Exception e) {
-                System.out.println(e);
-            }
-            return;
-        }
-        System.out.println("Not found");
-    }
+    //----------metodos----------//
+    //----------private----------//
+    
     private String profissionaisStr() {
         StringBuilder stringBuilder = new StringBuilder("");
         for (Profissional profissional : this.profissionais) {
@@ -96,9 +84,36 @@ public class Atividade {
         }
         return stringBuilder.toString();
     }
+    //----------public----------//
+    public void removeProfissional(Profissional profissional) {
+        if(this.profissionais.contains(profissional)) {
+            int index = this.profissionais.indexOf(profissional);
+            try {
+                this.profissionais.remove(index);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+            System.out.println("Removed");
+            return;
+        }
+        System.out.println("Not found");
+    }
+    public void removeTarefa(String tarefa) {
+        if(this.tarefas.contains(tarefa)) {
+            int index = this.tarefas.indexOf(tarefa);
+            try {
+                this.tarefas.remove(index);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+            System.out.println("Removed");
+            return;
+        }
+        System.out.println("Not found");
+    }
     @Override
     public String toString() {
-        return "Atividade [id = "+ id +
+        return "Atividade [id = " + id +
                         ", \nidentificacao = " + identificacao +
                         ", dataHrInicio = " + dataHrInicio + ", \ndataHrTermino=" + dataHrTermino + 
                         ", \ndescricao = " + descricao + 
