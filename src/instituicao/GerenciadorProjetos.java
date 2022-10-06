@@ -20,7 +20,7 @@ public class GerenciadorProjetos {
         int indexOfProjeto = projetos.lastIndexOf(novoProjeto);
         return projetos.get(indexOfProjeto);
     }
-    public void getProjeto(){
+    public void listProjetos(){
         for (Projeto elem: projetos){
             System.out.println(elem);
         }

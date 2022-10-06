@@ -77,4 +77,9 @@ public class GerenciadorUsuarios {
         int indexOfTecnico = tecnicos.lastIndexOf(novoTecnico);
         return tecnicos.get(indexOfTecnico);
     }
+    public void listUsuarios(){
+        for (Usuario elem: usuarios){
+            System.out.println(elem);
+        }
+    }
 }

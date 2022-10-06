@@ -20,7 +20,7 @@ public class GerenciadorAtividades {
         int indexOfAtividade = atividades.lastIndexOf(novaAtividade);
         return atividades.get(indexOfAtividade);
     }
-    public void getAtividade(){
+    public void listAtividades(){
         for (Atividade elem: atividades){
             System.out.println(elem);
         }
