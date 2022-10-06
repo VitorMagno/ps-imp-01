@@ -1,8 +1,10 @@
 package src.usuario;
 
 public class Professor extends Usuario {
-    public Professor(String nome, int cpf) {
+    String unidadeAcademica;
+    public Professor(String nome, String unidadeAcademica, int cpf) {
         super(nome, cpf);
+        this.unidadeAcademica = unidadeAcademica;
     }
     
 }

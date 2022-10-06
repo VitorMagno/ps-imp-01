@@ -5,7 +5,7 @@ public class Profissional extends Usuario {
     //     TESTADOR, DESENVOLVEDOR, ANALISTA
     // };
     private String cargo;
-    public Profissional(String nome, int cpf, String cargo) {
+    public Profissional(String nome, String cargo, int cpf) {
         super(nome, cpf);
         this.cargo = cargo;
     }
