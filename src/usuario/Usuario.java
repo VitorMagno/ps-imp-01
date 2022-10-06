@@ -8,7 +8,7 @@ public class Usuario {
     protected int cpf;
     protected String senha;
    
-    public Usuario(String nome, int cpf, String Senha) {
+    public Usuario(String nome, int cpf, String senha) {
         this.nome = nome;
         this.cpf = cpf;
         this.senha = senha;
