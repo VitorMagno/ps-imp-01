@@ -9,12 +9,16 @@ import src.usuario.*;
 public class GerenciadorAtividades {
     private ArrayList<Atividade> atividades;
     int id=0;
-    public void createAtividade(String identificacao, String descricao, Date dataHrInicio, Date dataHrTermino, Usuario responsavel) {
+    // cria uma atividade, coloca na lista de atividades e retorna o index dessa atividade  
+    public Atividade createAtividade(String identificacao, String descricao, Date dataHrInicio, Date dataHrTermino, Usuario responsavel) {
         if(atividades == null) {
             atividades = new ArrayList<Atividade>();
         }
-        Atividade novaAtividade = new Atividade(id+1, identificacao, descricao, dataHrInicio, dataHrTermino, responsavel);
+        this.id = id++;
+        Atividade novaAtividade = new Atividade(id, identificacao, descricao, dataHrInicio, dataHrTermino, responsavel);
         atividades.add(novaAtividade);
+        int indexOfAtividade = atividades.lastIndexOf(novaAtividade);
+        return atividades.get(indexOfAtividade);
     }
     public void getAtividade(){
         for (Atividade elem: atividades){
