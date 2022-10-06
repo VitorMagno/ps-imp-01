@@ -1,4 +1,4 @@
-package src.instituicao;
+package src.gerenciamento;
 
 import java.util.ArrayList;
 
