@@ -32,12 +32,15 @@ public class GerenciadorProjetos {
         }
         if(projeto.getStatus() == "Em processo de criacao") {
             projeto.setStatus("Iniciado");
+            return;
         }
         if(projeto.getStatus() == "Iniciado") {
             projeto.setStatus("Em andamento");
+            return;
         }
         if(projeto.getStatus() == "Em andamento") {
             projeto.setStatus("Concluido");
+            return;
         }
     }
 
