@@ -25,5 +25,20 @@ public class GerenciadorProjetos {
             System.out.println(elem);
         }
     }
+    public void changeStatus (Projeto projeto, Professor user) {
+        if(user.getClass().getName() != "Professor" || user.getClass().getName() != "Pesquisador") {
+            System.out.println("invalid user");
+            return;
+        }
+        if(projeto.getStatus() == "Em processo de criacao") {
+            projeto.setStatus("Iniciado");
+        }
+        if(projeto.getStatus() == "Iniciado") {
+            projeto.setStatus("Em andamento");
+        }
+        if(projeto.getStatus() == "Em andamento") {
+            projeto.setStatus("Concluido");
+        }
+    }
 
 }

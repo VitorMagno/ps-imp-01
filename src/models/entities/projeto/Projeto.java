@@ -13,6 +13,7 @@ public class Projeto {
     private int id;
     private int valorBolsa;
     
+    private String status;
     private String identificacao;
     private String descricao;
     private Professor coordenador;
@@ -58,6 +59,7 @@ public class Projeto {
         this.identificacao = identificacao;
         this.descricao = descricao;
         this.coordenador = coordenador;
+        this.status = "Em processo de criacao";
         this.valorBolsa = valorBolsa;
         this.dataHrInicio = dataHrInicio;
         this.dataHrTermino = dataHrTermino;
@@ -65,6 +67,16 @@ public class Projeto {
     }
     //----------setters & getters--------//
     
+    public String getStatus() {
+        return this.status;
+    }
+    public void setStatus(String status) {
+        if(status == "concluido" && profissionais.isEmpty() && atividades.isEmpty()){
+            System.out.println("projeto nao pode ser concluido");
+            return;
+        }
+        this.status = status;
+    }
     public void setIdentificacao(String identificacao) {
         this.identificacao = identificacao;
     }
