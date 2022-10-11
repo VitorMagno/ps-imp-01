@@ -149,6 +149,10 @@ public class Projeto {
 
     //-----------public-----------//
     
+    public ArrayList<Profissional> listaProfissionais() {
+        return profissionais;
+    }
+    
     public void removeAtividade(Atividade atividade) {
         if(this.atividades.contains(atividade)) {
             int index = this.atividades.indexOf(atividade);
@@ -184,6 +188,4 @@ public class Projeto {
                 + valorBolsa + ", \nvigenciaBolsa=" + vigenciaBolsa + ", \nprofissionais=" + profissionaisStr()
                 + ", \natividades" + atividadesStr()+ "]";
     }
-
-
 }
