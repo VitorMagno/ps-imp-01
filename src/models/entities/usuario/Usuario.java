@@ -1,4 +1,4 @@
-package src.usuario;
+package src.models.entities.usuario;
 /**
  * Usuario
  */

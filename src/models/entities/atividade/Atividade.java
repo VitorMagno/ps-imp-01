@@ -1,4 +1,4 @@
-package src.atividade;
+package src.models.entities.atividade;
 /**
  * Atividade
  */
@@ -6,8 +6,8 @@ package src.atividade;
 import java.util.ArrayList;
 import java.util.Date;
 
-import src.usuario.Profissional;
-import src.usuario.Usuario;
+import src.models.entities.usuario.Profissional;
+import src.models.entities.usuario.Usuario;
 
 public class Atividade {
     int id;

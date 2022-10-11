@@ -1,4 +1,4 @@
-package src.usuario;
+package src.models.entities.usuario;
 
 public class Pesquisador extends Professor {
     public Pesquisador(String nome, String unidadeAcademica, int cpf, String senha) {

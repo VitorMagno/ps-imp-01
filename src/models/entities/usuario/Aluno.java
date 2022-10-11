@@ -1,4 +1,4 @@
-package src.usuario;
+package src.models.entities.usuario;
 
 public class Aluno extends Usuario{
 

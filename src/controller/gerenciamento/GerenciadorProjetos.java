@@ -1,10 +1,10 @@
-package src.gerenciamento;
+package src.controller.gerenciamento;
 
 import java.sql.Date;
 import java.util.ArrayList;
 
-import src.projeto.Projeto;
-import src.usuario.*;
+import src.models.entities.projeto.Projeto;
+import src.models.entities.usuario.*;
 
 public class GerenciadorProjetos {
     ArrayList<Projeto> projetos;

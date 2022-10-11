@@ -1,10 +1,10 @@
-package src.gerenciamento;
+package src.controller.gerenciamento;
 
 import java.util.ArrayList;
 import java.util.Date;
 
-import src.atividade.Atividade;
-import src.usuario.*;
+import src.models.entities.atividade.Atividade;
+import src.models.entities.usuario.*;
 
 public class GerenciadorAtividades {
     private ArrayList<Atividade> atividades;

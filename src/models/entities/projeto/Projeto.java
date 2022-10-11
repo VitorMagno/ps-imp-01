@@ -1,11 +1,11 @@
-package src.projeto;
+package src.models.entities.projeto;
 
 import java.util.ArrayList;
 import java.util.Date;
 
-import src.atividade.Atividade;
-import src.usuario.Professor;
-import src.usuario.Profissional;
+import src.models.entities.atividade.Atividade;
+import src.models.entities.usuario.Professor;
+import src.models.entities.usuario.Profissional;
 /**
  * Projeto
  */
@@ -152,7 +152,7 @@ public class Projeto {
     public ArrayList<Profissional> listaProfissionais() {
         return profissionais;
     }
-    
+
     public void removeAtividade(Atividade atividade) {
         if(this.atividades.contains(atividade)) {
             int index = this.atividades.indexOf(atividade);

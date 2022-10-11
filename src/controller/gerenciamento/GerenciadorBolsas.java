@@ -1,10 +1,10 @@
-package src.gerenciamento;
+package src.controller.gerenciamento;
 
 import java.util.ArrayList;
 import java.util.Date;
 
-import src.projeto.Projeto;
-import src.usuario.Profissional;
+import src.models.entities.projeto.Projeto;
+import src.models.entities.usuario.Profissional;
 
 public class GerenciadorBolsas {
     public void pagarBolsa(Projeto projeto) {
