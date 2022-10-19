@@ -53,10 +53,14 @@ public class Atividade {
         this.responsavel = responsavel;
     }
     //----------setters & getters--------//
-    
+    public int getId() {
+        return id;
+    }
+
     public void setIdentificacao(String identificacao) {
         this.identificacao = identificacao;
     }
+
     public String getIdentificacao() {
         return this.identificacao;
     }
@@ -78,9 +82,11 @@ public class Atividade {
     public void setTarefas(String tarefas) {
         this.tarefas.add(tarefas);
     }
+
     public String getTarefas() {
         return this.tarefasStr();
     }
+    
     //----------metodos----------//
     //----------private----------//
     

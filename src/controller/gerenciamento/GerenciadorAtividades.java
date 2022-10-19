@@ -20,9 +20,21 @@ public class GerenciadorAtividades {
         int indexOfAtividade = atividades.lastIndexOf(novaAtividade);
         return atividades.get(indexOfAtividade);
     }
+
     public void listAtividades(){
         for (Atividade elem: atividades){
             System.out.println(elem);
+        }
+    }
+
+    public void removeAtividadeById(int id) {
+        for (Atividade elem: atividades){
+
+            if(elem.getId() == id){
+                atividades.remove(elem);
+            }else{
+                System.out.println("Atividade não existente");
+            }
         }
     }
 }

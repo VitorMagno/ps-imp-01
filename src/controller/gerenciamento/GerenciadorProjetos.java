@@ -20,14 +20,25 @@ public class GerenciadorProjetos {
         int indexOfProjeto = projetos.lastIndexOf(novoProjeto);
         return projetos.get(indexOfProjeto);
     }
-    public void removeProjeto() {
-        //todo
+
+    public void removeProjetoById(int id) {
+        for (Projeto elem: projetos){
+
+            if(elem.getId() == id){
+                projetos.remove(elem);
+            }else{
+                System.out.println("projeto não existente");
+            }
+        }
     }
+
     public void listProjetos(){
+
         for (Projeto elem: projetos){
             System.out.println(elem);
         }
     }
+
     public Projeto getProjetoById(int idProjeto) {
         for(Projeto elem: projetos){
             if(elem.getId() != idProjeto) {
@@ -37,6 +48,7 @@ public class GerenciadorProjetos {
         }
         return null;
     }
+
     public void changeStatus (Projeto projeto, Professor user) {
         if(user.getClass().getName() != "Professor" || user.getClass().getName() != "Pesquisador") {
             System.out.println("invalid user");

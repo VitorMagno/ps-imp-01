@@ -7,11 +7,16 @@ public class Usuario {
     protected String nome;
     protected int cpf;
     protected String senha;
+    protected int id;
    
-    public Usuario(String nome, int cpf, String senha) {
+    public Usuario(String nome, int id, int cpf, String senha) {
+        this.id = id;
         this.nome = nome;
         this.cpf = cpf;
         this.senha = senha;
+    }
+    public int getId() {
+        return id;
     }
     public void setName(String nome) {
         this.nome = nome;

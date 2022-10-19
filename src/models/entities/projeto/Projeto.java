@@ -70,19 +70,25 @@ public class Projeto {
     public int getId() {
         return id;
     }
+
     public String getStatus() {
         return this.status;
     }
+
     public void setStatus(String status) {
+        
         if(status == "concluido" && profissionais.isEmpty() && atividades.isEmpty()){
             System.out.println("projeto nao pode ser concluido");
             return;
         }
+
         this.status = status;
     }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
+
     public String getNome() {
         return nome;
     }
@@ -90,6 +96,7 @@ public class Projeto {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+    
     public String getDescricao() {
         return descricao;
     }
@@ -148,17 +155,21 @@ public class Projeto {
     
     private String profissionaisStr() {
         StringBuilder stringBuilder = new StringBuilder("");
+
         for (Profissional profissional : this.profissionais) {
             stringBuilder.append(profissional).append(" ");
         }
+
         return stringBuilder.toString();
     }
 
     private String atividadesStr() {
         StringBuilder stringBuilder = new StringBuilder("");
+        
         for (Atividade atividade : this.atividades) {
             stringBuilder.append(atividade).append(" ");
         }
+        
         return stringBuilder.toString();
     }
 
@@ -171,11 +182,13 @@ public class Projeto {
     public void removeAtividade(Atividade atividade) {
         if(this.atividades.contains(atividade)) {
             int index = this.atividades.indexOf(atividade);
+            
             try {
                 this.atividades.remove(index);
             } catch (Exception e) {
                 System.out.println(e);
             }
+            
             System.out.println("Removed");
             return;
         }
@@ -185,11 +198,13 @@ public class Projeto {
     public void removeProfissional(Profissional profissional) {
         if(this.profissionais.contains(profissional)) {
             int index = this.profissionais.indexOf(profissional);
+
             try {
                 this.profissionais.remove(index);
             } catch (Exception e) {
                 System.out.println(e);
             }
+            
             System.out.println("Removed");
             return;
         }
