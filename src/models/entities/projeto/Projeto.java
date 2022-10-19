@@ -180,35 +180,23 @@ public class Projeto {
     }
 
     public void removeAtividade(Atividade atividade) {
-        if(this.atividades.contains(atividade)) {
+        try {
             int index = this.atividades.indexOf(atividade);
-            
-            try {
-                this.atividades.remove(index);
-            } catch (Exception e) {
-                System.out.println(e);
-            }
-            
+            this.atividades.remove(index);
             System.out.println("Removed");
-            return;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
-        System.out.println("Not found");
     }
 
     public void removeProfissional(Profissional profissional) {
-        if(this.profissionais.contains(profissional)) {
+        try {
             int index = this.profissionais.indexOf(profissional);
-
-            try {
-                this.profissionais.remove(index);
-            } catch (Exception e) {
-                System.out.println(e);
-            }
-            
+            this.profissionais.remove(index);
             System.out.println("Removed");
-            return;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
-        System.out.println("Not found");
     }
 
     @Override

@@ -106,30 +106,22 @@ public class Atividade {
     }
     //----------public----------//
     public void removeProfissional(Profissional profissional) {
-        if(this.profissionais.contains(profissional)) {
+        try {
             int index = this.profissionais.indexOf(profissional);
-            try {
-                this.profissionais.remove(index);
-            } catch (Exception e) {
-                System.out.println(e);
-            }
+            this.profissionais.remove(index);
             System.out.println("Removed");
-            return;
+        } catch (Exception e) {
+            System.out.println(e);
         }
-        System.out.println("Not found");
     }
     public void removeTarefa(String tarefa) {
-        if(this.tarefas.contains(tarefa)) {
+        try {
             int index = this.tarefas.indexOf(tarefa);
-            try {
-                this.tarefas.remove(index);
-            } catch (Exception e) {
-                System.out.println(e);
-            }
+            this.tarefas.remove(index);
             System.out.println("Removed");
-            return;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
-        System.out.println("Not found");
     }
     @Override
     public String toString() {
