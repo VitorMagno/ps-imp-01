@@ -28,7 +28,6 @@ public class GerenciadorProjetos {
             System.out.println(elem);
         }
     }
-<<<<<<< HEAD:src/gerenciamento/GerenciadorProjetos.java
     public Projeto getProjetoById(int idProjeto) {
         for(Projeto elem: projetos){
             if(elem.getId() != idProjeto) {
@@ -38,12 +37,6 @@ public class GerenciadorProjetos {
         }
         return null;
     }
-    public void changeProjetoIniciado(Projeto projeto) {
-        projeto.setStatus("Em andamento");
-    }
-    public void changeProjetoEmAndamento(Projeto projeto) {
-        projeto.setStatus("Concluido");
-=======
     public void changeStatus (Projeto projeto, Professor user) {
         if(user.getClass().getName() != "Professor" || user.getClass().getName() != "Pesquisador") {
             System.out.println("invalid user");
@@ -61,7 +54,6 @@ public class GerenciadorProjetos {
             projeto.setStatus("Concluido");
             return;
         }
->>>>>>> 31c7b8928ff6ff1779acd5dee450daf26a61bdb0:src/controller/gerenciamento/GerenciadorProjetos.java
     }
 
 }

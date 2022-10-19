@@ -13,12 +13,7 @@ public class Projeto {
     private int id;
     private int valorBolsa;
     
-<<<<<<< HEAD:src/projeto/Projeto.java
     private String nome;
-=======
-    private String status;
-    private String identificacao;
->>>>>>> 31c7b8928ff6ff1779acd5dee450daf26a61bdb0:src/models/entities/projeto/Projeto.java
     private String descricao;
     private String status;
     private Professor coordenador;
@@ -72,11 +67,9 @@ public class Projeto {
         this.vigenciaBolsa = vigenciaBolsa;
     }
     //----------setters & getters--------//
-<<<<<<< HEAD:src/projeto/Projeto.java
     public int getId() {
         return id;
-=======
-    
+    }
     public String getStatus() {
         return this.status;
     }
@@ -85,13 +78,6 @@ public class Projeto {
             System.out.println("projeto nao pode ser concluido");
             return;
         }
-        this.status = status;
-    }
-    public void setIdentificacao(String identificacao) {
-        this.identificacao = identificacao;
->>>>>>> 31c7b8928ff6ff1779acd5dee450daf26a61bdb0:src/models/entities/projeto/Projeto.java
-    }
-    public void setStatus(String status) {
         this.status = status;
     }
     public void setNome(String nome) {
