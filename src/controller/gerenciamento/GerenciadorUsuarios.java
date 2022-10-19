@@ -1,8 +1,8 @@
-package src.gerenciamento;
+package src.controller.gerenciamento;
 
 import java.util.ArrayList;
 
-import src.usuario.*;
+import src.models.entities.usuario.*;
 
 public class GerenciadorUsuarios {
     private ArrayList<Aluno> alunos;

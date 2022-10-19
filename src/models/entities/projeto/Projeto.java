@@ -1,11 +1,11 @@
-package src.projeto;
+package src.models.entities.projeto;
 
 import java.util.ArrayList;
 import java.util.Date;
 
-import src.atividade.Atividade;
-import src.usuario.Professor;
-import src.usuario.Profissional;
+import src.models.entities.atividade.Atividade;
+import src.models.entities.usuario.Professor;
+import src.models.entities.usuario.Profissional;
 /**
  * Projeto
  */
@@ -13,7 +13,12 @@ public class Projeto {
     private int id;
     private int valorBolsa;
     
+<<<<<<< HEAD:src/projeto/Projeto.java
     private String nome;
+=======
+    private String status;
+    private String identificacao;
+>>>>>>> 31c7b8928ff6ff1779acd5dee450daf26a61bdb0:src/models/entities/projeto/Projeto.java
     private String descricao;
     private String status;
     private Professor coordenador;
@@ -60,14 +65,31 @@ public class Projeto {
         this.descricao = descricao;
         this.status = "Iniciado";
         this.coordenador = coordenador;
+        this.status = "Em processo de criacao";
         this.valorBolsa = valorBolsa;
         this.dataHrInicio = dataHrInicio;
         this.dataHrTermino = dataHrTermino;
         this.vigenciaBolsa = vigenciaBolsa;
     }
     //----------setters & getters--------//
+<<<<<<< HEAD:src/projeto/Projeto.java
     public int getId() {
         return id;
+=======
+    
+    public String getStatus() {
+        return this.status;
+    }
+    public void setStatus(String status) {
+        if(status == "concluido" && profissionais.isEmpty() && atividades.isEmpty()){
+            System.out.println("projeto nao pode ser concluido");
+            return;
+        }
+        this.status = status;
+    }
+    public void setIdentificacao(String identificacao) {
+        this.identificacao = identificacao;
+>>>>>>> 31c7b8928ff6ff1779acd5dee450daf26a61bdb0:src/models/entities/projeto/Projeto.java
     }
     public void setStatus(String status) {
         this.status = status;
@@ -156,6 +178,10 @@ public class Projeto {
 
     //-----------public-----------//
     
+    public ArrayList<Profissional> listaProfissionais() {
+        return profissionais;
+    }
+
     public void removeAtividade(Atividade atividade) {
         if(this.atividades.contains(atividade)) {
             int index = this.atividades.indexOf(atividade);
@@ -191,6 +217,4 @@ public class Projeto {
                 + valorBolsa + ", \nvigenciaBolsa=" + vigenciaBolsa + ", \nprofissionais=" + profissionaisStr()
                 + ", \natividades" + atividadesStr()+ "]";
     }
-
-
 }

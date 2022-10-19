@@ -1,6 +1,6 @@
-package src.gerenciamento;
+package src.controller.gerenciamento;
 
-import src.usuario.Usuario;
+import src.models.entities.usuario.Usuario;
 
 public class GerenciadorLogin {
     GerenciadorUsuarios appUsers;

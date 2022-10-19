@@ -1,10 +1,10 @@
-package src.usuario;
+package src.models.entities.usuario;
 
 public class Aluno extends Usuario{
 
     // protected enum tipoGrade{
-        //     GRADUACAO, MESTRADO, DOUTORADO
-        // };
+    //     GRADUACAO, MESTRADO, DOUTORADO
+    //};
     private String tipoGraduacao;
     public Aluno(String nome, String tipoGraduacao, int cpf, String senha) {
         super(nome, cpf, senha);

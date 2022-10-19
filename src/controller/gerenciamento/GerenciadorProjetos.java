@@ -1,10 +1,10 @@
-package src.gerenciamento;
+package src.controller.gerenciamento;
 
 import java.sql.Date;
 import java.util.ArrayList;
 
-import src.projeto.Projeto;
-import src.usuario.*;
+import src.models.entities.projeto.Projeto;
+import src.models.entities.usuario.*;
 
 public class GerenciadorProjetos {
     ArrayList<Projeto> projetos;
@@ -28,6 +28,7 @@ public class GerenciadorProjetos {
             System.out.println(elem);
         }
     }
+<<<<<<< HEAD:src/gerenciamento/GerenciadorProjetos.java
     public Projeto getProjetoById(int idProjeto) {
         for(Projeto elem: projetos){
             if(elem.getId() != idProjeto) {
@@ -42,6 +43,25 @@ public class GerenciadorProjetos {
     }
     public void changeProjetoEmAndamento(Projeto projeto) {
         projeto.setStatus("Concluido");
+=======
+    public void changeStatus (Projeto projeto, Professor user) {
+        if(user.getClass().getName() != "Professor" || user.getClass().getName() != "Pesquisador") {
+            System.out.println("invalid user");
+            return;
+        }
+        if(projeto.getStatus() == "Em processo de criacao") {
+            projeto.setStatus("Iniciado");
+            return;
+        }
+        if(projeto.getStatus() == "Iniciado") {
+            projeto.setStatus("Em andamento");
+            return;
+        }
+        if(projeto.getStatus() == "Em andamento") {
+            projeto.setStatus("Concluido");
+            return;
+        }
+>>>>>>> 31c7b8928ff6ff1779acd5dee450daf26a61bdb0:src/controller/gerenciamento/GerenciadorProjetos.java
     }
 
 }
