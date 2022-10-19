@@ -20,10 +20,28 @@ public class GerenciadorProjetos {
         int indexOfProjeto = projetos.lastIndexOf(novoProjeto);
         return projetos.get(indexOfProjeto);
     }
+    public void removeProjeto() {
+        //todo
+    }
     public void listProjetos(){
         for (Projeto elem: projetos){
             System.out.println(elem);
         }
+    }
+    public Projeto getProjetoById(int idProjeto) {
+        for(Projeto elem: projetos){
+            if(elem.getId() != idProjeto) {
+                continue;
+            }
+            return elem;
+        }
+        return null;
+    }
+    public void changeProjetoIniciado(Projeto projeto) {
+        projeto.setStatus("Em andamento");
+    }
+    public void changeProjetoEmAndamento(Projeto projeto) {
+        projeto.setStatus("Concluido");
     }
 
 }

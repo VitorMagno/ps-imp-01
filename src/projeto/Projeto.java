@@ -13,8 +13,9 @@ public class Projeto {
     private int id;
     private int valorBolsa;
     
-    private String identificacao;
+    private String nome;
     private String descricao;
+    private String status;
     private Professor coordenador;
 
     private ArrayList<Profissional> profissionais;
@@ -25,9 +26,9 @@ public class Projeto {
     Date dataHrTermino;
     Date vigenciaBolsa;
     
-    public Projeto(int id, String identificacao, String descricao, Professor coordenador, int valorBolsa, Date dataHrInicio, Date dataHrTermino, Date vigenciaBolsa) {
-        if (identificacao == null || identificacao == ""){
-            System.out.println("missing value identificacao");
+    public Projeto(int id, String nome, String descricao, Professor coordenador, int valorBolsa, Date dataHrInicio, Date dataHrTermino, Date vigenciaBolsa) {
+        if (nome == null || nome == ""){
+            System.out.println("missing value nome");
             return;
         }
         if (descricao == null || descricao == ""){
@@ -55,8 +56,9 @@ public class Projeto {
             return;
         }
         this.id = id;
-        this.identificacao = identificacao;
+        this.nome = nome;
         this.descricao = descricao;
+        this.status = "Iniciado";
         this.coordenador = coordenador;
         this.valorBolsa = valorBolsa;
         this.dataHrInicio = dataHrInicio;
@@ -64,12 +66,17 @@ public class Projeto {
         this.vigenciaBolsa = vigenciaBolsa;
     }
     //----------setters & getters--------//
-    
-    public void setIdentificacao(String identificacao) {
-        this.identificacao = identificacao;
+    public int getId() {
+        return id;
     }
-    public String getIdentificacao() {
-        return identificacao;
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    public String getNome() {
+        return nome;
     }
 
     public void setDescricao(String descricao) {
@@ -180,7 +187,7 @@ public class Projeto {
     @Override
     public String toString() {
         return "Projeto [id=" + id + ", \ncoordenador=" + coordenador + ", \ndataHrInicio=" + dataHrInicio + ", \ndataHrTermino="
-                + dataHrTermino + ", \ndescricao=" + descricao + ", \nidentificacao=" + identificacao + ", \nvalorBolsa="
+                + dataHrTermino + ", \ndescricao=" + descricao + ", \nnome=" + nome + ", \nvalorBolsa="
                 + valorBolsa + ", \nvigenciaBolsa=" + vigenciaBolsa + ", \nprofissionais=" + profissionaisStr()
                 + ", \natividades" + atividadesStr()+ "]";
     }
